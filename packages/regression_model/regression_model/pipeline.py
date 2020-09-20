@@ -13,6 +13,6 @@ CATEGORICAL_VARS = ['MSZoning', 'Neighborhood', 'RoofStyle', 'MasVnrType',
 price_pipe = Pipeline(
     [
         ('categorical_encoder',
-            pp.CategoricalEncoder(variables=config.CATEGORICAL_VARS))
+            pp.CategoricalEncoder(variables=CATEGORICAL_VARS))
     ]
 )
