@@ -8,8 +8,8 @@ DATASET_DIR = PACKAGE_ROOT / "datasets"
 
 
 
-TESTING_DATA_FILE = DATASET_DIR/ 'test.csv'
-TRAINING_DATA_FILE = DATASET_DIR/ 'train.csv'
+TESTING_DATA_FILE = 'test.csv'
+TRAINING_DATA_FILE ='train.csv'
 TARGET = 'SalePrice'
 
 

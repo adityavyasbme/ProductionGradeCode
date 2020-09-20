@@ -5,6 +5,7 @@ import joblib
 
 from regression_model import pipeline
 from regression_model.config import config
+from regression_model.processing.data_management import load_dataset, save_pipeline
 
 # input variables 
 FEATURES = ['MSSubClass', 'MSZoning', 'Neighborhood',
@@ -28,7 +29,7 @@ def save_pipeline(*,pipeline_to_persist)->None:
 def run_training():
     """Train the model."""
     # read training data
-    data = pd.read_csv(config.DATASET_DIR / config.TRAINING_DATA_FILE)
+    data = load_dataset(file_name=config.TRAINING_DATA_FILE)
     
     # divide train and test
     
