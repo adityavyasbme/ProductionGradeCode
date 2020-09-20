@@ -1,0 +1,6 @@
+#Api Specific
+flask==1.0.2
+
+# Local Regression Model Package
+# Update with your local path
+-e "/Users/adityavyas/desktop/CustomPipeline/projectx/packages/regression_model"
