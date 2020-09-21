@@ -1,23 +1,21 @@
-version: 2
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
 jobs:
-  test_regression_model:
-    working_directory: ~/project
-    docker:
-      - image: circleci/python:3.7.2
+  build-and-test:
+    executor: python/default
     steps:
       - checkout
+      - python/load-cache
+      - python/install-deps
+      - python/save-cache
       - run:
-          name: Runnning tests
-          command: |
-            virtualenv venv
-            . venv/bin/activate
-            pip install --upgrade pip
-            pip install -r packages/regression_model/requirements.txt
-            chmod +x ./scripts/fetch_kaggle_dataset.sh
-            ./scripts/fetch_kaggle_dataset.sh
-            py.test -vv packages/regression_model/tests
+          command: ./manage.py test
+          name: Test
+
 workflows:
-  version: 2
-  test-all:
+  main:
     jobs:
-      - test_regression_model
+      - build-and-test
