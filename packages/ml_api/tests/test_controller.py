@@ -1,10 +1,12 @@
 from regression_model.config import config as model_config
 from regression_model.processing.data_management import load_dataset
 from regression_model import __version__ as _version
-from api import __version__ as api_version
 
 import json
 import math
+
+from api import __version__ as api_version
+
 
 def test_health_endpoint_returns_200(flask_test_client):
     # When
@@ -12,6 +14,7 @@ def test_health_endpoint_returns_200(flask_test_client):
 
     # Then
     assert response.status_code == 200
+
 
 def test_version_endpoint_returns_version(flask_test_client):
     # When
@@ -35,7 +38,7 @@ def test_prediction_endpoint_returns_prediction(flask_test_client):
 
     # When
     response = flask_test_client.post('/v1/predict/regression',
-    								json=json.loads(post_json))
+                                      json=json.loads(post_json))
 
     # Then
     assert response.status_code == 200

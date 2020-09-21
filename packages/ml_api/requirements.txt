@@ -1,9 +1,9 @@
-#Api Specific
-flask==1.1.2
+# api
+flask==1.0.2
 
-#Schema Validation
+# schema validation
 marshmallow==2.17.0
 
-# Local Regression Model Package
-# Update with your local path
--e "/Users/adityavyas/desktop/CustomPipeline/projectx/packages/regression_model"
+# local regression_model package
+# update with your local path
+-e "C:\Users\chris\repos\deploying-machine-learning-models\packages\regression_model"
